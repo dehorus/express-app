@@ -1,0 +1,29 @@
+<%- include('templates/header') %>
+<body>
+    <%- include('templates/navbar') %>
+    <h1>Mascotas</h1>
+    <div class="container">
+        <table class="table is-striped is-fullwidth">
+            <thead>
+                <tr>
+                    <th> <abbr title="id"> ID </abbr></th>
+                    <th> Nombre </th>
+                    <th> Descripcion </th>
+                    <th> Accion </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% if (arrayMascotas.length > 0) { %>
+                    <% arrayMascotas.forEach(el => { %>
+                        <tr>
+                            <th> <%= el.id %>  </th>
+                            <td> <%= el.nombre %>  </td>
+                            <td> <%= el.descripción %>  </td>
+                            <th> Botones </th>
+                        </tr>
+                    <% }) %>
+                <% } %>  
+            </tbody>
+        </table>
+    </div>
+<%- include('templates/footer') %>
